@@ -1,0 +1,242 @@
+﻿<link rel="stylesheet" href="wwwroot/css/register.css" />
+<script src="wwwroot/js/login.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<body>
+    <section>
+        <div class="login-box">
+
+            <form id="registerForm" asp-route-returnUrl="" method="post">
+                <h5>التسجيل في البرنامج</h5>
+                <br />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                <div class="form-floating">
+                    <label asp-for="Input.FirstName" class="textr mb-5" style="margin-bottom:3rem !important">الاسم الأول</label>
+                    <input asp-for="Input.FirstName" class="form-floating form-control" autocomplete="firstname" aria-required="true" placeholder="first name" />
+                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <label asp-for="Input.LastName" class="textr" style="margin-bottom:30px !important">اسم الأب</label>
+                    <input asp-for="Input.LastName" class="form-floating form-control" autocomplete="lastname" aria-required="true" placeholder="last name" />
+                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <select asp-for="Input.SchoolName" class="form-control-sm" required>
+                        <option value="">اسم مدرستك</option>
+                        <option>المتقدمة (1)</option>
+                        <option>المتقدمة (2)</option>
+                        <option>معلم/ معلمة</option>
+                        <option>محكم/ رجل أعمال</option>
+                        <option>دكتور مشرف/ مناقش</option>
+                        <option>الباحثة</option>
+                    </select>
+                </div>
+                <div class="form-floating">
+                    <label asp-for="Input.Email" class="textr" style="margin-bottom:30px !important">البريد الإلكتروني</label>
+                    <input asp-for="Input.Email" class="form-floating form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <label asp-for="Input.Password" class="textr" style="margin-bottom:30px !important">كلمة السر</label>
+                    <input asp-for="Input.Password" class="form-floating form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <label asp-for="Input.ConfirmPassword" class="textr" style="margin-bottom:30px !important">تأكيد كلمة السر</label>
+                    <input asp-for="Input.ConfirmPassword" class="form-floating form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button id="registerSubmit" type="submit" class="boldy">التسجيل</button>
+            </form>
+        </div>
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+        <div class="moving-spotlight"></div>
+        <div class="particles" id="particles"></div>
+    </section>
+
+    <partial name="_ValidationScriptsPartial" />
+
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(-45deg, #23a6d5, #0056b3, #00408a, #001F3F, #003366);
+        width: 100%;
+        height: 100vh;
+        animation: gradient 15s ease infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        direction: rtl;
+        text-align: right;
+        padding: 20px;
+        overflow-x: hidden;
+    }
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background: url(wwwroot/images/transparentrectangle1.png) center center;
+        background-size: cover;
+        position: relative;
+        padding: 20px;
+    }
+
+    .textr {
+        margin-bottom: 3em !important;
+        font-size: 12px !important;
+        font:bold !important;
+    }
+
+    .spotlight-demo {
+        height: 200px;
+        border-radius: 15px;
+        margin: 40px 0;
+        background: linear-gradient(135deg, #001F3F, #003366);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .moving-spotlight {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(64, 224, 208, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+        animation: moveSpotlight 8s infinite ease-in-out;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 375px;
+        background: transparent;
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, .5);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 10px;
+        flex-direction: column;
+    }
+
+    h5 {
+        font-size: 1em;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .form-floating {
+        position: relative;
+        margin-bottom: 11px;
+        width: 100%;
+        text-align: right;
+    }
+
+        .form-floating input {
+            margin-top: 7px !important;
+            height: 25px;
+            font-size: 0.9em;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+
+        .form-floating label {
+            margin-bottom: 10px !important;
+            right: 0px;
+            left: auto;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+    .form-control {
+        background: transparent;
+        height: 65px;
+    }
+
+    .text-danger {
+        font-size: 0.85em;
+    }
+
+    .form-group {
+        border: white !important;
+    }
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+    select option {
+        color: black;
+    }
+
+    .main-btn {
+        display: block;
+        margin: 20px auto;
+        font-family: Arial;
+        text-align: center center;
+        color: #fff;
+        font-size: 1.05em;
+        font-weight: 700;
+        background-color: turquoise;
+        height: 40px;
+        width: 150px;
+        border-radius: 14px;
+        border: 1px solid #000;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .main-btn:hover {
+            color: whitesmoke;
+            background-color: transparent;
+            border-color: turquoise;
+            transform: scale(1.05);
+        }
+
+    .register-link {
+        font-size: .9em;
+        color: #fff;
+        text-align: center;
+        margin: 20px 0 10px;
+    }
+
+        .register-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+            .register-link p a:hover {
+                text-decoration: underline;
+            }
+</style>
