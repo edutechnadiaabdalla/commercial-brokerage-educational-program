@@ -1,0 +1,60 @@
+﻿@media (max-width: 768px) {
+    .options-container {
+        gap: 1px !important; /* أصغر مسافة */
+        row-gap: 1px !important;
+        padding: 5px !important;
+        bottom: 70px !important; /* ← غير هذا */
+        z-index: 1000 !important; /* ← وهذا */
+    }
+
+    .option {
+        margin-bottom: 0 !important;
+        padding: 6px 4px !important; /* أصغر */
+        min-height: 50px !important; /* أقصر */
+    }
+
+    .option-top {
+        margin-bottom: 0 !important;
+        font-size: 13px !important;
+        line-height: 1.1 !important;
+    }
+
+    .option-bottom {
+        font-size: 11px !important;
+        line-height: 1.1 !important;
+        margin-top: 1px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .options-container {
+        bottom: 100px !important; /* ← أعلى بكثير */
+        gap: 0 !important; /* لا مسافات */
+        transform: scale(0.9) !important; /* تصغير الحجم */
+        transform-origin: bottom center !important;
+    }
+
+    .option {
+        transform: scale(0.95) !important; /* تصغير الخيارات */
+    }
+}
+
+@media (max-width: 768px) {
+    /* خفض الخيارات كثيراً */
+    .options-container {
+        bottom: 150px !important; /* ← جرب 150 ثم 200 */
+        opacity: 0.8 !important;
+        pointer-events: none; /* ← لا تمنع الضغط */
+    }
+
+    /* الخيارات فقط يمكن لمسها */
+    .option {
+        pointer-events: auto !important;
+    }
+
+    /* رفع عناصر تحكم الفيديو */
+    #mainVideo {
+        z-index: 100 !important;
+        position: relative !important;
+    }
+}
