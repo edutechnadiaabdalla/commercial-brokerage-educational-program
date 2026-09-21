@@ -1,4 +1,3 @@
-﻿
 document.addEventListener("DOMContentLoaded", () => {
 
     const inputs = document.querySelectorAll(".input-box input");
