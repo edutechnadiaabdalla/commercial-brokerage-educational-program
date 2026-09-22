@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار المواقف (القبلي)</title>
+    <link rel="stylesheet" href="wwwroot/css/exams1.css">
+    <link rel="stylesheet" href="wwwroot/css/studentcard.css" />
+
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-section">
+            <h1>اختبار المواقف (القبلي)</h1>
+            <div class="user-info-section">
+                <h3>معلومات المشارك</h3>
+                <div class="user-data">
+                    <div class="info-row">
+                        <div class="info-label">البريد الإلكتروني:</div>
+                        <div class="info-value" id="display-email"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">اسم الطالب:</div>
+                        <div class="info-value" id="display-name"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="description" style="direction:rtl;">
+                هذا الاختبار مصمم لقياس مستوى توافر مهارات أعمال الوساطة التجارية لديك (قبل تعلمك من البرنامج)، حيث أعد الاختبار من خلال صياغة مواقف تطبيقية تحاكي مواقف أعمال الوساطة التجارية، التي تتطلب مهارة في أدائها.
+            </p>
+        </div>
+
+        <div class="exam-card" style="direction:rtl;">
+            <div class="exam-header">
+                <p class="exam-description">
+                    قبل البدء في الاستجابة لحل الاختبار، عليك الاطلاع على تعليمات أداء الاختبار بالنقر على زر (بدء حل الاختبار) لقراءة تعليمات الاختبار، ثم البدء بحل اختبار المواقف:
+                </p>
+                <h2 class="exam-heading">للبدء انقر زر بدء حل الاختبار</h2>
+            </div>
+
+            <button class="exam-toggle-btn" onclick="toggleExam()" style="direction:rtl;">بدء حل الاختبار 🔽</button>
+
+            <div class="exam-content" id="examContent" style="display: none; text-align: center;">
+                <div class="instructions">
+                    <h4 style="font-size:22px;">تعليمات اختبار المواقف</h4>
+
+                    <div class="mb-3" style="direction:rtl; text-align:right !important; font-size:18px; font:bold !important; color:brown !important;">عزيزي الطالب والطالبة:</div>
+                    <div class="mb-3" style="direction:rtl; text-align:right !important; font-size:16px; font:bold !important;">يعرض عليك بالشاشة الحالية بالأسفل، اختبار مواقف (قبلي) به مجموعة من العبارات التي تم إعدادها لأغراض وأهداف بحث علمي تربوي، ويجب عليك قراءة المعلومات وإتباع التعليمات التالية:</div>
+                    <ul style="direction:rtl; text-align:right !important;">
+                        <li>اسمك وبريدك الإلكتروني سيتم ملأها تلقائيا من نظام البرنامج الذكي، ببداية الاختبار.</li>
+                        <li>يتكون الاختبار من (30) موقف مختلف، وعليك البدء في إجابة الاختبار حتى نهايته./li>
+                        <li>عليك قراءة تلك المواقف بعناية.</li>
+                        <li>اختر الإجراء الذي يمثل طريقتك الأفضل للتعامل بهذا الموقف، من اختيارات (أ) أو (ب) أو (ج)، أو (د)، كما هو موضح بالمثال بالشكل التالي، كما يلي:</li>
+                        <li>سيتم حفظ إجاباتك تلقائيا بنظام البرنامج عند إرسالها.</li>
+                        <li>ويجب أن تعلم بأن هذا الاختبار قد تم إعداده لغرض البحث العلمي فقط، وليس له علاقة نهائيا بتقييمك الدراسي داخل الفصل أو المدرسة.</li>
+                        <li>أن اهتمامك بالإجابة بدقة عما يمثلك لكل عبارة من عبارات الاختبار، يسهم في الحصول على بيانات دقيقة تفيد البحث العلمي التربوي الحالي بشكل جوهري.</li>
+                    </ul>
+                </div>
+
+                <button class="exam-btn2" style="direction:rtl;">بدء حل الاختبار</button>
+
+                <div class="form-container">
+                    <iframe id="googleForm" title="نموذج الحوار التفاعلي" frameborder="0" marginheight="0" marginwidth="0">
+                        جارٍ تحميل النموذج...
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="mt-7 mb-5">
+        <div class="page-container">
+            <div class="decorative-elements">
+                <div class="decor"> </div>
+                <div class="decor"> </div>
+                <div class="decor"> </div>
+            </div>
+
+            <div class="student-card">
+                <div class="card-header">
+                    <div class="graduation-icon">
+                        <i class="fas fa-graduation-cap"> </i>
+                    </div>
+                    <h1 class="card-title">عزيزي الطالب</h1>
+                    <p class="card-subtitle"></p>
+                </div>
+
+                <div class="message-box">
+                    <p class="message-text">
+                        مهارات أعمال الوساطة التجارية التي تتعلمها اليوم في البرنامج، هي جسرك إلى فرص استثنائية لك اليوم وغدا لمستقبلك، استمر في التقدم، فكل موضوع من الموضوعات الأربعة، التي ستتعلمها في البرنامج، تقربك من التميز في إتقان مهارات أعمال الوساطة التجارية.
+                    </p>
+                </div>
+                <p class="card-footer" style="direction:rtl;">إنتقل للشاشة التالية (الموضوع الأول) لتعلم مهارات أعمال وكيل البيع، بالنقر على الزر التالي:</p>
+                <br />
+                <a href="/Identity/mymainitems/beaa1" class="next-link">
+                    <i class="fas fa-arrow-left"> </i>
+                    إنتقل إلى <br />الموضوع الأول
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div class="spacing mb-5"></div>
+
+    <script>
+        document.getElementById('display-name').textContent = userName;
+        document.getElementById('display-email').textContent = userEmail;
+
+        function toggleExam() {
+            const content = document.getElementById('examContent');
+            const button = document.querySelector('.exam-toggle-btn');
+
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                button.textContent = '▲ إخفاء الاختبار';
+                button.style.background = 'turquoise';
+
+                loadGoogleForm();
+            } else {
+                content.style.display = 'none';
+                button.textContent = '🔽 بدء حل الاختبار';
+                button.style.background = 'linear-gradient(135deg, #4285f4 0%, #2a56c6 100%)';
+            }
+        }
+
+        function buildPrefilledFormUrl() {
+            const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdslaE6snL450H8RKWKDbJtekTiBvPupDfGoEmkme-0BY8vOw/viewform";
+            const encodedName = encodeURIComponent(userName);
+            const encodedEmail = encodeURIComponent(userEmail);
+
+            return `${baseUrl}?embedded=true&usp=pp_url&entry.708689992=${encodedName}&entry.1122938231=${encodedEmail}`;
+        }
+
+        function loadGoogleForm() {
+            const formUrl = buildPrefilledFormUrl();
+            const iframe = document.getElementById('googleForm');
+
+            if (iframe.src !== formUrl) {
+                iframe.src = formUrl;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log('شاشة اختبار المواقف جاهزة');
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const card = document.querySelector('.student-card');
+            const pageContainer = document.querySelector('.page-container');
+
+            pageContainer.style.minHeight = '100vh';
+
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px) scale(0.98)';
+
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) scale(1)';
+            }, 300);
+
+            const messages = [
+                "Success is the sum of small efforts repeated day in and day out. Keep going and you'll reach your goal.",
+                "Your learning today is an investment in your future. Work hard and be proud of every step you take towards knowledge.",
+                "Great minds have purposes, others have wishes. Be one of those with purposes.",
+                "Don't wait for perfect conditions. Start where you are, use what you have, and achieve what you can.",
+                "Education is the most powerful weapon which you can use to change the world. - Nelson Mandela"
+            ];
+
+            let currentMessageIndex = 0;
+
+            card.addEventListener('click', function (e) {
+                const link = document.querySelector('.next-link');
+                if (e.target !== link && !link.contains(e.target)) {
+                    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+
+                    const messageText = document.querySelector('.message-text');
+                    messageText.style.opacity = '0.3';
+                    messageText.style.transform = 'translateY(10px)';
+
+                    setTimeout(() => {
+                        let newMessage = messages[currentMessageIndex];
+                        newMessage = newMessage.replace(/challenge|effort|growth|knowledge|success|education/gi,
+                            match => `<span class="keyword">${match}</span>`);
+
+                        messageText.innerHTML = newMessage;
+                        messageText.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        messageText.style.opacity = '1';
+                        messageText.style.transform = 'translateY(0)';
+                    }, 300);
+                }
+            });
+
+            const nextLink = document.querySelector('.next-link');
+            nextLink.addEventListener('mouseenter', function () {
+                this.style.background = 'linear-gradient(to right, #5a6268, #727b84)';
+            });
+
+            nextLink.addEventListener('mouseleave', function () {
+                this.style.background = 'linear-gradient(to right, #6c757d, #868e96)';
+            });
+        });
+    </script>
+
+</body>
+</html>
