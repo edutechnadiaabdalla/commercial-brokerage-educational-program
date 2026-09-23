@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهارات أعمال وكيل البيع</title>
+    <link rel="stylesheet" href="wwwroot/css/vdeep2.css">
+    <link rel="stylesheet" href="wwwroot/css/testy.css">
+    <link rel="stylesheet" href="wwwroot/css/mobile-fix-only.css">
+    <link rel="stylesheet" href="wwwroot/css/sendd.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .nonindex {
+            z-index: 0 !important;
+        }
+
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 75vh !important;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0 !important;
+            aspect-ratio: 16 / 9;
+            margin: 0 auto;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain cover;
+        }
+
+        .video-container::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: transparent;
+            z-index: 5;
+        }
+
+        .status-message {
+            display: none;
+            position: fixed;
+            top: 65px !important;
+            right: 20px;
+            padding: 15px 20px;
+            background: #0056b3 !important;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .option-timer {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .video-info {
+            text-align: center;
+            margin-top: 7px !important;
+            margin-bottom: 50px !important;
+            font-size: 1.1rem;
+            color: #0056b3;
+            font-weight: 500;
+        }
+
+        .loader {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 8px solid #ff6a3d;
+            animation: spin 1s linear infinite;
+            z-index: 20;
+        }
+
+
+        .turquoo {
+            color: #5c6bc0 !important;
+            font-size: 1.75rem;
+            font: bold;
+            margin: 7px 0;
+            text-align: justify;
+            direction: rtl;
+            unicode-bidi: embed;
+            margin-right: 5px;
+        }
+
+        .lightb3 {
+            color: rgba(28, 37, 38, 0.9) !important;
+            font-size: 1.5rem;
+            font: bold !important;
+            margin: 5px 0;
+            text-align: justify;
+            direction: rtl;
+            unicode-bidi: embed;
+            margin-right: 5px;
+        }
+
+
+        .bullet-list2 {
+            list-style-type: disc;
+            text-align: right;
+            text-align: justify !important;
+            text-justify: inter-word;
+            direction: rtl;
+            unicode-bidi: embed;
+            margin-right: 5px;
+        }
+
+            .bullet-list2 li {
+                margin-right: 5px;
+                font-size: 1.2rem;
+                font: lighter;
+                color: rgba(28, 37, 38, 0.9) !important;
+                margin: 5px;
+                text-align: right !important;
+            }
+
+        .dark-theme .question {
+            background: #e3f2fd !important;
+        }
+
+        .dark-theme .response {
+            background: #f2f2f2 !important;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-top: 0 !important;
+            margin-bottom: 15px !important;
+            color: #2196f3 !important;
+            font-size: 2rem;
+            font: bold;
+            text-decoration: none;
+        }
+
+        .page-title2 {
+            text-align: center;
+            margin-top: 0 !important;
+            margin-bottom: 15px !important;
+            color: mediumblue;
+            font-size: 2rem;
+            font: 900;
+            text-decoration: none;
+        }
+
+
+        .ahdaf {
+            color: #5c6bc0;
+            font-size: 2rem;
+            font: 900;
+            text-decoration: underline;
+            margin: 7px 0;
+            text-align: justify;
+            direction: rtl;
+            unicode-bidi: embed;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerry">
+        <div class="card">
+            <h2 style="text-align: center !important;">إرسل ملخصا لأهم 7 مهارات تعلمتها من موضوع مهارات أعمال وكيل البيع</h2>
+            <h2 style="text-align: center !important;">بياناتك تملأ تلقائيا</h2>
+            <form id="contactForm" action="https://formsubmit.co/8b64d44d1fa138de43d010102db7d1ab" method="POST">
+
+                <div class="form-group">
+                    <label for="name">الاسم:</label>
+                    <input type="text" id="name" name="name"
+                           value=""
+                           placeholder="الاسم">
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email"
+                           value=""
+                           placeholder="البريد الإلكتروني">
+                </div>
+                <div class="form-group">
+                    <label for="message" style="direction:rtl; text-align:right;">الملخص:</label>
+                    <textarea id="message" name="message" placeholder="اكتب هنا تلخيصك"></textarea>
+                </div>
+                <div class="centt">
+                    <button style="align-content: center !important; align-items:center !important;" type="submit" class="btn">إرسال</button>
+                    <button style="align-content: center !important; align-items:center !important;" type="reset" class="btn btn-secondary">مسح</button>
+                </div>
+            </form>
+            <div class="message" id="formMessage"></div>
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!document.getElementById('name').value && userName) {
+                document.getElementById('name').value = userName;
+            }
+            if (!document.getElementById('email').value && userEmail) {
+                document.getElementById('email').value = userEmail;
+            }
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+
+            try {
+                formMessage.textContent = 'Sending your message...';
+                formMessage.className = 'message';
+                formMessage.style.display = 'block';
+
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formMessage.textContent = 'شكرا لك! تم إرسال ملخصك بنجاح.';
+                    formMessage.className = 'رسالة ناجحة';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formMessage.textContent = 'خطأ في إرسال الملخص، حاول مرة أخرى!';
+                formMessage.className = 'خطأ بإرسال الملخص';
+            }
+        });
+
+    </script>
+
+
+    <div class="spacing mt-5" style="height:10rem !important;"></div>
+    <br />
+    <br />
+    <br />
+
+    <div class="theme-toggle">
+        <button class="theme-btn light active" data-theme="light" title="الوضع الفاتح">☀️</button>
+        <button class="theme-btn colorful" data-theme="colorful" title="الوضع الملون">🌈</button>
+        <button class="theme-btn dark" data-theme="dark" title="الوضع الداكن">🌙</button>
+    </div>
+
+    <!-- ============ بداية كود تبديل الخلفية ============ -->
+
+    <script>
+        const themeButtons = document.querySelectorAll('.theme-btn');
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const theme = this.getAttribute('data-theme');
+
+                themeButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                document.body.className = `${theme}-theme`;
+
+                localStorage.setItem('preferredTheme', theme);
+            });
+        });
+
+        const savedTheme = localStorage.getItem('preferredTheme') || 'light';
+        document.body.className = `${savedTheme}-theme`;
+        themeButtons.forEach(btn => {
+            if (btn.getAttribute('data-theme') === savedTheme) {
+                btn.classList.add('active');
+            }
+        });
+    </script>
+    <script>
+        const themeButtons = document.querySelectorAll('.theme-btn');
+
+        const themeStyles = {
+            light: {
+                body: { background: '#f5f5f5', color: '#333' },
+                container: { background: 'white', color: '#333' },
+                examCard: { background: 'white', border: '1px solid #ddd' }
+            },
+            colorful: {
+                body: {
+                    background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+                    color: '#2c3e50'
+                },
+                container: {
+                    background: 'rgba(255, 255, 255, 0.9)',
+                    color: '#2c3e50',
+                    backdropFilter: 'blur(10px)'
+                },
+                examCard: {
+                    background: 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)',
+                    color: 'white',
+                    border: 'none'
+                }
+            },
+            dark: {
+                body: { background: '#121212', color: '#e0e0e0' },
+                container: { background: '#1e1e1e', color: '#e0e0e0', border: '1px solid #333' },
+                examCard: { background: '#2d2d2d', color: '#e0e0e0', border: '1px solid #444' }
+            }
+        };
+
+        function applyThemeToAllElements(theme) {
+            const styles = themeStyles[theme];
+
+            Object.assign(document.body.style, styles.body);
+
+            document.querySelectorAll('.container').forEach(container => {
+                Object.assign(container.style, styles.container);
+            });
+
+            const examCard = document.querySelector('.exam-card');
+            if (examCard) {
+                Object.assign(examCard.style, styles.examCard);
+            }
+
+            if (theme === 'dark') {
+                document.querySelectorAll('.exam-choice-btn').forEach(btn => {
+                    btn.style.background = '#3d3d3d';
+                    btn.style.color = '#e0e0e0';
+                    btn.style.border = '1px solid #555';
+                });
+
+                document.querySelectorAll('.exam-feedback').forEach(feedback => {
+                    feedback.style.background = '#333';
+                    feedback.style.color = '#e0e0e0';
+                    feedback.style.border = '1px solid #444';
+                });
+            }
+        }
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const theme = this.getAttribute('data-theme');
+
+                themeButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                document.body.className = `${theme}-theme`;
+
+                applyThemeToAllElements(theme);
+
+                localStorage.setItem('preferredTheme', theme);
+            });
+        });
+
+        const savedTheme = localStorage.getItem('preferredTheme') || 'light';
+        document.body.className = `${savedTheme}-theme`;
+
+        themeButtons.forEach(btn => {
+            if (btn.getAttribute('data-theme') === savedTheme) {
+                btn.classList.add('active');
+            }
+        });
+
+        setTimeout(() => {
+            applyThemeToAllElements(savedTheme);
+        }, 100);
+    </script>
+    <script>
+        const container = document.querySelector('.options-container');
+        container.style.cssText = `
+                        gap: 0px !important;
+                        row-gap: 0px !important;
+                        bottom: 80px !important;
+                        padding: 3px !important;
+                    `;
+
+        document.querySelectorAll('.option').forEach(opt => {
+            opt.style.cssText = `
+                            margin: 0 !important;
+                            padding: 4px 2px !important;
+                            min-height: 45px !important;
+                        `;
+
+            const top = opt.querySelector('.option-top');
+            const bottom = opt.querySelector('.option-bottom');
+            if (top) top.style.cssText = 'font-size:12px !important; margin:0 !important;';
+            if (bottom) bottom.style.cssText = 'font-size:10px !important; margin:0 !important;';
+        });
+    </script>
+</body>
+</html>
+
