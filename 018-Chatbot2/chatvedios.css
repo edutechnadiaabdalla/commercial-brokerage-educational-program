@@ -396,7 +396,6 @@ button.gsc-search-button-v2 {
 }
 
 /* إزالة أي بوردر أو outline */
-.gsc-control-cse,
 .gsc-input-box,
 .gsc-input-box-focus,
 .gsc-input-box-hover {
@@ -420,4 +419,5 @@ button.gsc-search-button-v2 {
 
 .gsc-control-cse {
     font-family: arial, sans-serif;
+    padding:0 !important;
 }
