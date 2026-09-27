@@ -349,11 +349,12 @@ p {
 .gsc-control-cse-en,
 table.gsc-search-box,
 .gsc-search-box {
-     background: #2c3e50; 
+    background: #2c3e50; 
+    height:200px !important;
     width: 90% !important;
     max-width: 90% !important;
     min-width: 90% !important;
-    display: fixed !important;
+    display: block !important;
 }
 
 /* الخلية اللي فيها حقل الكتابة */
