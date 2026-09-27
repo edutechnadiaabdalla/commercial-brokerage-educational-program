@@ -350,10 +350,10 @@ p {
 table.gsc-search-box,
 .gsc-search-box {
      background: #2c3e50; 
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    display: block !important;
+    width: 90% !important;
+    max-width: 90% !important;
+    min-width: 90% !important;
+    display: fixed !important;
 }
 
 /* الخلية اللي فيها حقل الكتابة */
