@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate">
+
+    <title>Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="chatvedios.css">
+    <link rel="stylesheet" href="vdeep2.css">
+    <link rel="stylesheet" href="testy.css">
+    <link rel="stylesheet" href="mobile-fix-only.css">
+    <link rel="stylesheet" href="sendd.css">
+
+    <script src="chat.js" defer></script>
+</head>
+<body>
+        <div class="container">
+            <div class="chatbox">
+                <div class="chatbox__support">
+
+                    <div class="chatbox__header">
+                        <img src="images/OIGchatbot.jpg" class="imglogo2" alt="لوجو البرنامج" width="41" height="39">
+                        <h6 class="text-center">ChatBot </h6>
+                    </div>
+
+                    <div class="chatbot-container" id="chatbot">
+
+                        <div class="question-wrapper">
+                            <img src="images/OIGchatbot.jpg" class="imglogo2" alt="لوجو البرنامج" width="41" height="39">
+                            <div class="questionn1" style="padding:7px !important; border-radius:7px;">اهلا بك عزيزي 👋</div>
+                        </div>
+
+                        <div class="container" style="z-index:5 !important;">
+                            <div class="exam-toggle-wrapper">
+                                <br />
+                                <div class="exam-card">
+                                    <h2 class="exam-heading">هيا نتحاور</h2>
+                                    <p class="exam-description">
+                                        بعد مشاهدتك فيديو مهارات أعمال وكيل البيع، وللتأكد من مدى اتقانك مهارات أعمال وكيل البيع، ابدأ في الاستجابة لسؤال الحوار، ثم انقر زر (التالي)، الحوار له تغذية راجعة فورية وفق إجاباتك، وفي حال خطئك سيعاد لك ذات السؤال، وفي حال صحة إجابتك ستنتقل للسؤال التالي، انقر على بدء الحوار:
+                                    </p>
+
+                                    <button class="exam-toggle-btn">🔽 بدء الحوار</button>
+
+                                    <div class="content" style="display:none;">
+                                        <div class="user-info-section">
+                                            <h3 class="whit">كيف يكون موقفك وإجرائك؟ في حال:</h3>
+
+                                            <div class="user-data">
+                                                <div class="info-row">
+                                                    <div class="info-label">البريد الإلكتروني:</div>
+                                                    <div class="info-value" id="display-email">جار التحميل...</div>
+                                                </div>
+                                                <div class="info-row">
+                                                    <div class="info-label">اسم الطالب:</div>
+                                                    <div class="info-value" id="display-name">جار التحميل...</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-container">
+                                            <iframe id="googleForm" frameborder="0" marginheight="0" marginwidth="0">
+                                                جارٍ تحميل النموذج...
+                                            </iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="response" style="background-color:#f1f1f3 !important;">
+                            <p id="response-text"></p>
+                            <button class="close-button" onclick="closeResponse(this)">إغلاق</button>
+                        </div>
+                    </div>
+
+                    <div class="chatbox__footer">
+                        <script async src="https://cse.google.com/cse.js?cx=678d9c518a4764aa5"></script>
+                        <div class="gcse-search"></div>
+                    </div>
+                
+                </div>
+
+                <div class="chatbox__button">
+                    <button class="chatboxbutton rounded-circle"></button>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('display-name').textContent = 'ضيف';
+            document.getElementById('display-email').textContent = 'غير مسجل';
+
+            window.addEventListener('DOMContentLoaded', function () {
+                const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc3Zp4KxH3aFabVQcFaocAdYFUk__hGo14rIJEzoF2RwdvGcQ/viewform";
+                document.getElementById('googleForm').src = baseUrl + "?embedded=true";
+            });
+        </script>
+        <script>
+            document.querySelectorAll(".exam-toggle-btn").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    const content = this.nextElementSibling;
+
+                    if (!content || !content.classList.contains("content")) return;
+
+                    if (content.style.display === "none") {
+                        content.style.display = "block";
+                        this.innerHTML = "🔼 إخفاء الحوار";
+                    } else {
+                        content.style.display = "none";
+                        this.innerHTML = "🔽 بدء الحوار";
+                    }
+                });
+            });
+        </script>
+
+
+    </body>
+</html>
+
