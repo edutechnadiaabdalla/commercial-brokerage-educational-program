@@ -350,11 +350,11 @@ p {
 table.gsc-search-box,
 .gsc-search-box {
     background: #2c3e50; 
-    height:200px !important;
+    height:150px !important;
     width: 90% !important;
     max-width: 90% !important;
     min-width: 90% !important;
-    display: block !important;
+    display: none !important;
 }
 
 /* الخلية اللي فيها حقل الكتابة */
@@ -396,6 +396,7 @@ button.gsc-search-button-v2 {
 }
 
 /* إزالة أي بوردر أو outline */
+.gsc-control-cse,
 .gsc-input-box,
 .gsc-input-box-focus,
 .gsc-input-box-hover {
