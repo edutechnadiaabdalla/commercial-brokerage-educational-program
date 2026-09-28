@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | لوحة تحكم الآدمن</title>
+    <link rel="stylesheet" href="~/css/styleloginadmin.css" />
+</head>
+<body class="col-xs">
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+
+    <div class="login-container">
+        <h2>AdminDashboard لوحة تحكم الآدمن</h2>
+        <form method="post">
+            <div class="password-container">
+                <input class="texty" type="password" name="password" placeholder="كلمة المرور" required id="password" />
+                <button type="button" class="toggle-password" id="togglePassword">👀</button>
+            </div>
+            <button class="boldy" type="submit">دخول</button>
+        </form>
+        <p id="errorMessage" class="error-message" style="display:none;">كلمة المرور غير صحيحة</p>
+    </div>
+
+    <div class="particles" id="particles"></div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 20 + 10;
+                const animationDelay = Math.random() * 5;
+
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}%`;
+                particle.style.animationDuration = `${animationDuration}s`;
+                particle.style.animationDelay = `${animationDelay}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? '👀' : '🔒';
+        });
+
+        // Simulate form submission with error
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Show error message for demonstration
+            errorMessage.style.display = 'block';
+
+            // Hide error after 3 seconds
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 3000);
+        });
+
+        // Initialize particles
+        createParticles();
+    </script>
+</body>
+</html>

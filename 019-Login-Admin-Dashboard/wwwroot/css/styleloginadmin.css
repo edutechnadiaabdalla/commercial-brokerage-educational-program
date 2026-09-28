@@ -1,0 +1,529 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg,turquoise,#23a6d5,#23a6d5, #0056b3, #00408a, rgba(28, 37, 38, 0.8));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.col-xs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Floating Animation */
+/*@keyframes float {
+    0% {
+        transform: translateY(0px) translateX(-50%);
+    }
+
+    50% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(-50%);
+    }
+}
+*/
+/* Background Animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Login Container with Glass Morphism */
+.login-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px 35px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    animation: float 6s ease-in-out infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+    z-index: 10;
+}
+
+    /* Animated Background Elements */
+    .login-container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        z-index: -1;
+    }
+
+    /* Header Styling */
+    .login-container h2 {
+        color: white;
+        margin-bottom: 35px;
+        font-size: 1.8rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        position: relative;
+        padding-bottom: 15px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+        .login-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            border-radius: 3px;
+        }
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Input Field Styling */
+.texty {
+    padding: 18px 20px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    color: #333;
+    position: relative;
+    width: 100%;
+}
+
+    .texty:focus {
+        outline: none;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+    }
+
+    .texty::placeholder {
+        color: #666;
+        transition: all 0.3s ease;
+    }
+
+    .texty:focus::placeholder {
+        opacity: 0.7;
+        transform: translateX(-5px);
+    }
+
+/* Button Styling */
+.boldy {
+    padding: 18px 30px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #23a6d5, #0056b3);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px turquoise;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+    .boldy::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: 0.5s;
+    }
+
+    .boldy:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(255, 255, 255, 0.95);
+    }
+
+        .boldy:hover::before {
+            left: 100%;
+        }
+
+    .boldy:active {
+        transform: translateY(-2px);
+    }
+
+/* Error Message Styling */
+.error-message {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ffcccc;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 25px;
+    border: 1px solid rgba(255, 107, 107, 0.4);
+    animation: shake 0.5s ease-in-out;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+}
+
+/* Floating Particles */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float-particle 15s infinite linear;
+}
+h2 {
+    font-size: 16px !important;
+}
+
+    @keyframes float-particle {
+        0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    /* Shake Animation for Errors */
+    @keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+
+        10%, 30%, 50%, 70%, 90% {
+            transform: translateX(-5px);
+        }
+
+        20%, 40%, 60%, 80% {
+            transform: translateX(5px);
+        }
+    }
+    /* Password Container */
+    .password-container {
+    position: relative;
+}
+
+/* Toggle Password Button */
+.toggle-password {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+    .toggle-password:hover {
+        color: #333;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+/* Additional Decorative Elements */
+.decoration {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    z-index: 1;
+}
+
+.decoration-1 {
+    top: 10%;
+    right: 10%;
+}
+
+.decoration-2 {
+    bottom: 10%;
+    left: 10%;
+}
+
+/* NEW MEDIA QUERIES - Samsung Galaxy A51/A71 and iPad */
+
+/* Samsung Galaxy A51 & A71 */
+@media screen and (min-width: 412px) and (max-width: 915px) and (min-height: 846px) and (max-height: 914px) {
+    .login-container {
+        padding: 35px 30px;
+        width: 85%;
+        max-width: 400px;
+    }
+
+        .login-container h2 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+        }
+
+    .texty {
+        padding: 16px 18px;
+        font-size: 16px;
+    }
+
+    .boldy {
+        padding: 16px 25px;
+        font-size: 17px;
+    }
+
+    .toggle-password {
+        font-size: 20px;
+        left: 12px;
+    }
+
+    form {
+        gap: 22px;
+    }
+}
+
+/* Samsung Galaxy A51 Specific */
+@media screen and (width: 412px) and (height: 914px) {
+    .login-container {
+        padding: 30px 25px;
+    }
+
+        .login-container h2 {
+            font-size: 1.5rem;
+            padding-bottom: 12px;
+        }
+
+    .decoration {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Samsung Galaxy A71 Specific */
+@media screen and (width: 412px) and (height: 914px) {
+    .login-container {
+        padding: 32px 28px;
+    }
+
+        .login-container h2 {
+            font-size: 1.55rem;
+        }
+}
+
+/* iPad (All models) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .login-container {
+        padding: 50px 45px;
+        max-width: 500px;
+        width: 80%;
+    }
+
+        .login-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+
+    .texty {
+        padding: 22px 25px;
+        font-size: 18px;
+        border-radius: 18px;
+    }
+
+    .boldy {
+        padding: 22px 35px;
+        font-size: 20px;
+        border-radius: 18px;
+    }
+
+    .toggle-password {
+        font-size: 24px;
+        left: 20px;
+    }
+
+    form {
+        gap: 30px;
+    }
+
+    .error-message {
+        padding: 18px;
+        font-size: 17px;
+        margin-top: 30px;
+    }
+
+    .decoration {
+        width: 200px;
+        height: 200px;
+    }
+
+    .decoration-1 {
+        top: 15%;
+        right: 15%;
+    }
+
+    .decoration-2 {
+        bottom: 15%;
+        left: 15%;
+    }
+}
+
+/* iPad Pro */
+@media screen and (width: 1024px) and (height: 1366px) {
+    .login-container {
+        max-width: 550px;
+        padding: 60px 50px;
+    }
+
+        .login-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+    .texty {
+        padding: 25px 30px;
+        font-size: 20px;
+    }
+
+    .boldy {
+        padding: 25px 40px;
+        font-size: 22px;
+    }
+
+    .toggle-password {
+        font-size: 26px;
+        left: 25px;
+    }
+}
+
+/* iPad Mini */
+@media screen and (width: 768px) and (height: 1024px) {
+    .login-container {
+        max-width: 450px;
+        padding: 45px 40px;
+    }
+
+        .login-container h2 {
+            font-size: 2rem;
+        }
+}
+
+/* iPad Landscape */
+@media screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .login-container {
+        max-width: 450px;
+        padding: 40px 35px;
+    }
+
+        .login-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+    .texty, .boldy {
+        padding: 18px 25px;
+    }
+
+    .decoration {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .login-container {
+        border-width: 0.5px;
+    }
+
+    .texty, .boldy {
+        transform: translateZ(0);
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .login-container {
+        animation: none;
+    }
+
+    .particle {
+        animation: none;
+        display: none;
+    }
+
+    .texty:focus, .boldy:hover {
+        transform: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .login-container {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .texty {
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+    }
+
+        .texty::placeholder {
+            color: #444;
+        }
+}
