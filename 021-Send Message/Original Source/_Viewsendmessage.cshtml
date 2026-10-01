@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إرسل تعليق</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            text-align: right;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #2575fc 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: #2575fc;
+            margin: 1.5rem 0 1rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            }
+
+        .btn {
+            display: inline-block;
+            background: #2575fc;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            margin: 0.5rem;
+
+        }
+
+            .btn:hover {
+                background: #1a5fd8;
+            }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+            .btn-secondary:hover {
+                background: #5a6268;
+            }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-align: right;
+        }
+
+            input:focus, textarea:focus {
+                outline: none;
+                border-color: #2575fc;
+                box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.2);
+            }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .message {
+            padding: 0.7rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            display: none;
+            text-align: center;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .form-buttons {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .hidden-input {
+            display: none;
+        }
+
+        .centt {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>إرسل تعليق/ سؤال</h1>
+            <p>بياناتك تملأ تلقائيا</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2 style="text-align: center !important;">إرسل تعليق/ سؤال</h2>
+
+            <form id="contactForm" action="https://formsubmit.co/8b64d44d1fa138de43d010102db7d1ab" method="POST">
+
+                <div class="form-group">
+                    <label for="name">الاسم:</label>
+                    <input type="text" id="name" name="name"
+                           value=""
+                           placeholder="الاسم">
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email"
+                           value=""
+                           placeholder="البريد الإلكتروني">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="centt">
+                <button style="align-content: center !important; align-items:center !important;" type="submit" class="btn">إرسل</button>
+                <button style="align-content: center !important; align-items:center !important;" type="reset" class="btn btn-secondary">أعد الكتابة</button>
+                </div>
+            </form>
+            <div class="message" id="formMessage"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Brokerage Business Skills Web App: bbswebapp.com. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+
+            try {
+                // Show loading state
+                formMessage.textContent = 'Sending your message...';
+                formMessage.className = 'message';
+                formMessage.style.display = 'block';
+
+                // Send the form data to FormSubmit
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formMessage.textContent = 'شكرا لك! تم إرسال رسالتك بنجاح.';
+                    formMessage.className = 'رسالة ناجحة';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formMessage.textContent = 'خطأ في إرسال الرسالة، حاول مرة أخرى!';
+                formMessage.className = 'خطأ بإرسال الرسالة';
+            }
+        });
+
+    </script>
+</body>
+</html>
